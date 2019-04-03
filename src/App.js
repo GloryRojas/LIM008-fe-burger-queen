@@ -7,8 +7,13 @@ class App extends Component {
     return (
       <div className='App'>
         <div>
-          <h2>Burguer Queen</h2>  
+          <h2>Ingrese Nombre del cliente:</h2> 
+          <input type="text"></input>
         </div>
+        <div>
+          <h6>Aqui va el menú </h6>
+        </div>
+        <button></button>
       </div>
     );
   }
