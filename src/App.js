@@ -1,23 +1,47 @@
 import React, { Component } from 'react';
+import firebase from './firestore.js';
 import './App.css';
+
+
+const db = firebase.firestore();
+
+db.collection('menu').get().then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} : ${doc.data().nombre} : ${doc.data().precio}`);
+  });
+});
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: [],
+      items: [],
       isLoaded: false
     }
   }
 
-  componentDidMount() {
-    fetch('https://gloryrojas.github.io/LIM008-fe-burger-queen/src/menu/menu.json')
+/*   componentDidMount() {
+    fetch('https://raw.githubusercontent.com/GloryRojas/LIM008-fe-burger-queen/developer/src/menu/menu.json')
       .then(res => res.json())
       .then(json => {
         this.setState({
           isLoaded: true,
           items: json
         })
+      });
+  } */
+
+  componentDidMount() {
+    db.collection('menu').get()
+    .then(json => {
+      let doc = []
+      json.forEach(docu => {
+        doc.push(docu.data());
+        this.setState({
+          isLoaded: true,
+          items: doc
+        })
+      })
       });
   }
 
@@ -29,15 +53,15 @@ class App extends Component {
     } else{
       return (
         <div>
-          <ul>
-            {
-              items.map(item => (
-                <li key={item.id}>
-                  {item.categoria} => Categoria: {item.producto} | Nombre: {item.nombre} | Precio: {item.precio}
-                </li>
-              ))
-            }
-          </ul>
+          { 
+            items.map(item => {
+              return ( 
+                <div key={item.id}>
+                  <h6>{item.nombre}: {item.precio}.00</h6>
+                </div>
+              )
+            })
+          }
         </div>
       )
     }
