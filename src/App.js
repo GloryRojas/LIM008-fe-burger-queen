@@ -11,7 +11,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://raw.githubusercontent.com/GloryRojas/LIM008-fe-burger-queen/developer/src/menu/menu.json')
+    fetch('https://gloryrojas.github.io/LIM008-fe-burger-queen/src/menu/menu.json')
       .then(res => res.json())
       .then(json => {
         this.setState({
