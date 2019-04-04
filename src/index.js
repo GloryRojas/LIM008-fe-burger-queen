@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import firebase from './firestore';
+import firebase from './firestore.js';
 import './index.css';
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
