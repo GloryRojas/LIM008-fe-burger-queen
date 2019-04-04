@@ -1,20 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import firebase from 'firebase';
+import firebase from './firestore.js';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyA0_09VnrA-EZjEyMCIFlmsDqeKYIhiXlQ",
-    authDomain: "burguer-queen-grm.firebaseapp.com",
-    databaseURL: "https://burguer-queen-grm.firebaseio.com",
-    projectId: "burguer-queen-grm",
-    storageBucket: "burguer-queen-grm.appspot.com",
-    messagingSenderId: "1033408267444"
-  };
-  firebase.initializeApp(config);
+
+const db = firebase.firestore();
+
+db.collection('menu').get().then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} : ${doc.data().nombre} : ${doc.data().precio}`);
+  });
+});
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
