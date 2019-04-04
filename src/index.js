@@ -1,21 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import firebase from 'firebase';
+import firebase from './firestore';
 import './index.css';
-import App from './App';
+// import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-firebase.initializeApp({
-    apiKey: "AIzaSyA0_09VnrA-EZjEyMCIFlmsDqeKYIhiXlQ",
-    authDomain: "burguer-queen-grm.firebaseapp.com",
-    databaseURL: "https://burguer-queen-grm.firebaseio.com",
-    projectId: "burguer-queen-grm",
-    storageBucket: "burguer-queen-grm.appspot.com",
-    messagingSenderId: "1033408267444"
-  });
 
-  var database = firebase.database();
-  console.log(database)
+const db = firebase.firestore();
+
+db.collection('menu').get().then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} : ${doc.data().nombre} : ${doc.data().precio}`);
+  });
+});
+
+class App extends React.Component {
+  render() {
+    return <h1>Hola</h1>
+  }
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
