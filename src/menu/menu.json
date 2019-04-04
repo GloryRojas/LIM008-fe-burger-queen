@@ -2,16 +2,72 @@
     {
         "id": "P1",
         "nombre": "Hamburguesa Simple",
-        "categoria": "allDay",
+        "categoria": "Resto del Día",
         "precio": 10,
         "producto": "Hamburguesa"  
     },
     {
+        "id": "P2",
+        "nombre": "Hamburguesa Doble",
+        "categoria": "Resto del Día",
+        "precio": 15,
+        "producto": "Hamburguesa"  
+    },
+    {
+        "id": "P3",
+        "nombre": "Papas Fritas",
+        "categoria": "Resto del Día",
+        "precio": 5,
+        "producto": "Acompañamientos"  
+    },
+    {
+        "id": "P4",
+        "nombre": "Aros de Cebolla",
+        "categoria": "Resto del Día",
+        "precio": 10,
+        "producto": "Acompañamientos"  
+    },
+    {
+        "id": "P5",
+        "nombre": "Agua 500 ml",
+        "categoria": "Resto del Día",
+        "precio": 5,
+        "producto": "Para Tomar"  
+    },
+    {
+        "id": "P6",
+        "nombre": "Agua 750 ml",
+        "categoria": "Resto del Día",
+        "precio": 7,
+        "producto": "Para Tomar"  
+    },
+    {
+        "id": "P7",
+        "nombre": "Bebida/gaseosa 500 ml",
+        "categoria": "Resto del Día",
+        "precio": 7,
+        "producto": "Para Tomar"  
+    },
+    {
+        "id": "P8",
+        "nombre": "Bebida/gaseosa 750 ml",
+        "categoria": "Resto del Día",
+        "precio": 10,
+        "producto": "Para Tomar"  
+    },
+    {
+        "id": "P9",
+        "nombre": "Huevo",
+        "categoria": "Resto del Día",
+        "precio": 1,
+        "producto": "Adicionales"  
+    },
+    {
         "id": "P10",
         "nombre": "Queso",
-        "categoria": "allDay",
+        "categoria": "Resto del Día",
         "precio": 1,
-        "producto": "Adicional"  
+        "producto": "Adicionales"  
     },
     {
         "id": "P11",
@@ -40,61 +96,5 @@
         "categoria": "Desayuno",
         "precio": 10,
         "producto": "Sandwich"  
-    },
-    {
-        "id": "P2",
-        "nombre": "Hamburguesa Doble",
-        "categoria": "allDay",
-        "precio": 15,
-        "producto": "Hamburguesa"  
-    },
-    {
-        "id": "P3",
-        "nombre": "Papas Fritas",
-        "categoria": "allDay",
-        "precio": 5,
-        "producto": "Acompañamientos"  
-    },
-    {
-        "id": "P4",
-        "nombre": "Aros de Cebolla",
-        "categoria": "allDay",
-        "precio": 10,
-        "producto": "Acompañamientos"  
-    },
-    {
-        "id": "P5",
-        "nombre": "Agua 500 ml",
-        "categoria": "allDay",
-        "precio": 5,
-        "producto": "Para Tomar"  
-    },
-    {
-        "id": "P6",
-        "nombre": "Agua 750 ml",
-        "categoria": "allDay",
-        "precio": 7,
-        "producto": "Para Tomar"  
-    },
-    {
-        "id": "P7",
-        "nombre": "Bebida/gaseosa 500 ml",
-        "categoria": "allDay",
-        "precio": 7,
-        "producto": "Para Tomar"  
-    },
-    {
-        "id": "P8",
-        "nombre": "Bebida/gaseosa 750 ml",
-        "categoria": "allDay",
-        "precio": 10,
-        "producto": "Para Tomar"  
-    },
-    {
-        "id": "P9",
-        "nombre": "Huevo",
-        "categoria": "allDay",
-        "precio": 1,
-        "producto": "Adicionales"  
     }
 ]

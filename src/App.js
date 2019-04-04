@@ -1,21 +1,46 @@
 import React, { Component } from 'react';
-import firebase from 'firebase';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      item: [],
+      isLoaded: false
+    }
+  }
+
+  componentDidMount() {
+    fetch('https://raw.githubusercontent.com/GloryRojas/LIM008-fe-burger-queen/developer/src/menu/menu.json')
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          isLoaded: true,
+          items: json
+        })
+      });
+  }
+
   render() {
-    return (
-      <div className='App'>
+    const { isLoaded, items } = this.state;
+
+    if(!isLoaded) {
+      return <div>Loading...</div>
+    } else{
+      return (
         <div>
-          <h2>Ingrese Nombre del cliente:</h2> 
-          <input type="text"></input>
+          <ul>
+            {
+              items.map(item => (
+                <li key={item.id}>
+                  {item.categoria} => Categoria: {item.producto} | Nombre: {item.nombre} | Precio: {item.precio}
+                </li>
+              ))
+            }
+          </ul>
         </div>
-        <div>
-          <h6>Aqui va el menú </h6>
-        </div>
-        <button></button>
-      </div>
-    );
+      )
+    }
   }
 }
 
