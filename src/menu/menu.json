@@ -1,0 +1,100 @@
+[
+    {
+        "id": "P1",
+        "nombre": "Hamburguesa Simple",
+        "categoria": "Resto del Día",
+        "precio": 10,
+        "producto": "Hamburguesa"  
+    },
+    {
+        "id": "P2",
+        "nombre": "Hamburguesa Doble",
+        "categoria": "Resto del Día",
+        "precio": 15,
+        "producto": "Hamburguesa"  
+    },
+    {
+        "id": "P3",
+        "nombre": "Papas Fritas",
+        "categoria": "Resto del Día",
+        "precio": 5,
+        "producto": "Acompañamientos"  
+    },
+    {
+        "id": "P4",
+        "nombre": "Aros de Cebolla",
+        "categoria": "Resto del Día",
+        "precio": 10,
+        "producto": "Acompañamientos"  
+    },
+    {
+        "id": "P5",
+        "nombre": "Agua 500 ml",
+        "categoria": "Resto del Día",
+        "precio": 5,
+        "producto": "Para Tomar"  
+    },
+    {
+        "id": "P6",
+        "nombre": "Agua 750 ml",
+        "categoria": "Resto del Día",
+        "precio": 7,
+        "producto": "Para Tomar"  
+    },
+    {
+        "id": "P7",
+        "nombre": "Bebida/gaseosa 500 ml",
+        "categoria": "Resto del Día",
+        "precio": 7,
+        "producto": "Para Tomar"  
+    },
+    {
+        "id": "P8",
+        "nombre": "Bebida/gaseosa 750 ml",
+        "categoria": "Resto del Día",
+        "precio": 10,
+        "producto": "Para Tomar"  
+    },
+    {
+        "id": "P9",
+        "nombre": "Huevo",
+        "categoria": "Resto del Día",
+        "precio": 1,
+        "producto": "Adicionales"  
+    },
+    {
+        "id": "P10",
+        "nombre": "Queso",
+        "categoria": "Resto del Día",
+        "precio": 1,
+        "producto": "Adicionales"  
+    },
+    {
+        "id": "P11",
+        "nombre": "Café Americano",
+        "categoria": "Desayuno",
+        "precio": 5,
+        "producto": "Bebidas Calientes"  
+    },
+    {
+        "id": "P12",
+        "nombre": "Café con leche",
+        "categoria": "Desayuno",
+        "precio": 7,
+        "producto": "Bebidas Calientes"  
+    },
+    {
+        "id": "P13",
+        "nombre": "Jugo de frutas natural",
+        "categoria": "Desayuno",
+        "precio": 7,
+        "producto": "Bebidas frias"  
+    },
+    {
+        "id": "P14",
+        "nombre": "Sandwich de Jamon y queso",
+        "categoria": "Desayuno",
+        "precio": 10,
+        "producto": "Sandwich"  
+    }
+]
