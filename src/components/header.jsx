@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-
+import './header.css';
 class Header extends Component {
     render() {
         return ( 
-        <header>
+        <header className='header'>
             "COFFEE & BURGUER"
         </header> 
         )
