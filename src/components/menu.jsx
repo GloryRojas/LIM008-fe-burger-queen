@@ -44,14 +44,16 @@ export class Desayuno extends Component {
       return <div>Loading...</div>
     } else{
         return (
-          <div className='desayuno'>
-            <h4>DESAYUNO</h4>
+          <div className='blocks'>
             { 
               items.map(item => {
                 if (item.categoria === 'Desayuno') { 
                   return ( 
-                    <p key={item.id}>{item.nombre}: {item.precio}</p>
-                  )
+                    <div className='product back-tres'>
+                      <p key={item.id}>{item.nombre}:</p>
+                      <p>$ {item.precio}.00</p>
+                    </div>
+                   )
                 }
               })
             }
@@ -91,14 +93,17 @@ export class Menu extends Component {
       return <div>Loading...</div>
     } else{
         return (
-          <div className='rest'>
-            <h4>RESTO DEL DÍA</h4>
+          <div className='blocks'>
             { 
               items.map(item => {
                 if (item.categoria === 'allDay') { 
                   return ( 
-                    <p key={item.id}>{item.nombre}: {item.precio}.00</p>               
-                )}
+                    <div className='product back-dos'>
+                      <p>{item.nombre}: </p>
+                      <p key={item.id} >$ {item.precio}.00</p>               
+                    </div>
+                  )
+                }
               })
             }
           </div>
@@ -106,4 +111,10 @@ export class Menu extends Component {
       )
     }
   }
+}
+
+export const Desa = ()  =>{
+  return(
+    <h1>hola</h1>
+  )
 }

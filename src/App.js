@@ -5,17 +5,21 @@ import { Menu, Desayuno } from './components/menu.jsx';
 import Pedidos from './components/pedidos.jsx'
 
 class App extends Component {
+
   render() {
     return ( 
-      <div className='container'>
+      <div className=''>
         <Header />
-        <div className='row'>
+        <div className='bodrow'>
           <div className='col back-uno'>
             <h3>MENÚ</h3>
-            <button onClick={()=><Menu />}>Desayuno</button>
-            <button onClick={()=><Desayuno />}>Resto del Día</button>
+            <button onClick={<Desayuno />}>Desayuno</button>
+            <button onClick={<Menu />}>Resto del Día</button>
+            <Desayuno />
+            <Menu />
           </div>
           <div className='col back-uno'>
+            <h3>PEDIDOS</h3>
             <Pedidos />
           </div>
         </div>
