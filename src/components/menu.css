@@ -1,0 +1,21 @@
+.product{
+    border-radius: 5px;
+    margin: 1%;
+    font-size: 13px;
+    width: 30%;
+    padding: 10px 0px;
+}
+
+.back-tres{
+    background-color: #FFBE00;
+}
+.back-dos{
+    background-color: #00B18F;
+}
+.blocks{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 10px 0px 15px;
+}
