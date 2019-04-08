@@ -12,17 +12,17 @@ class App extends Component {
       boxing: <div></div>
     }
   }
-  breakfast = () => {
+/*   breakfast = () => {
     this.setState({
-      box: <div><Menu/></div>
+      box: <div><Desayuno/></div>
     })
   };
 
   dinner = () => {
     this.setState({
-      box: <div><Menu/></div>
+      boxing: <div><Menu/></div>
     })
-  };
+  }; */
 
   render() {
 
@@ -32,7 +32,10 @@ class App extends Component {
         <div className='bodrow'>
           <div className='col back-uno'>
             <h3>MENÚ</h3>
-            <button onClick={this.breakfast}>Desayuno {this.state.box}</button>
+            <button onClick={this.breakfast}>Desayuno</button>
+            <button onClick={this.dinner}>Resto del día</button>
+            <Desayuno/>
+            <Menu/>
           </div>
           <div className='col back-uno'>
             <h3>PEDIDOS</h3>
