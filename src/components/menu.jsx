@@ -49,10 +49,10 @@ export class Desayuno extends Component {
               items.map(item => {
                 if (item.categoria === 'Desayuno') { 
                   return ( 
-                    <div className='product back-tres' key={item.id}>
+                    <button className='product back-tres' key={item.id}>
                       <p >{item.nombre}:</p>
                       <p>$ {item.precio}.00</p>
-                    </div>
+                    </button>
                    )
                 }
               })
@@ -98,10 +98,10 @@ export class Menu extends Component {
               items.map(item => {
                 if (item.categoria === 'allDay') { 
                   return ( 
-                    <div className='product back-dos' key={item.id} >
+                    <button className='product back-dos' key={item.id} >
                       <p>{item.nombre}: </p>
                       <p>$ {item.precio}.00</p>               
-                    </div>
+                    </button>
                   )
                 }
               })

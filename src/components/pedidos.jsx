@@ -1,6 +1,42 @@
 import React, { Component } from 'react';
 import './pedidos.css';
+
+const menu = [
+    {
+        "id": "P1",
+        "nombre": "Hamburguesa Simple",
+        "categoria": "Resto del Día",
+        "precio": 10,
+        "producto": "Hamburguesa",
+        "cantidad": 1 
+    },
+    {
+        "id": "P2",
+        "nombre": "Hamburguesa Doble",
+        "categoria": "Resto del Día",
+        "precio": 15,
+        "producto": "Hamburguesa",
+        "cantidad": 1  
+    },
+]
+
 class Pedidos extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            pedido: [
+                /* {
+                id: 'P1',
+                count: 2,
+                },
+                {
+                    id: 'P2',
+                    count: 1,
+                }, */
+            ],
+        }
+    }
+      
     render() {
         return ( 
             <div>
@@ -16,19 +52,25 @@ class Pedidos extends Component {
                             <th>P /ELIMIN $</th>
 
                         </tr>
-                        <tr>
-                            <td>Hamburguesa Simple</td>
-                            <td>
-                                <button><i className="fas fa-minus"></i></button>
-                                2
-                                <button><i className="fas fa-plus"></i></button>
-                            </td>
-                            <td>10</td>
-                            <td>20</td>
-                            <td>
-                                <button><i class="fas fa-times"></i></button>   
-                            </td>
-                        </tr>
+                        {this.state.pedido.map((p) => {
+                            const producto = menu.find(i => i.id === p.id)
+                            return (
+                                <tr>
+                                    <td>{producto.nombre}</td>
+                                    <td>
+                                        <button><i className="fas fa-minus"></i></button>
+                                        {producto.cantidad}
+                                        <button><i className="fas fa-plus"></i></button>
+                                    </td>
+                                    <td>{producto.precio}</td>
+                                    <td>{producto.cantidad * producto.precio}</td>
+                                    <td>
+                                        <button><i className="fas fa-times"></i></button>   
+                                    </td>
+                                </tr>
+                            )
+                        })}
+
                     </table> 
                 </div>
                 <button>Enviar pedido</button>
