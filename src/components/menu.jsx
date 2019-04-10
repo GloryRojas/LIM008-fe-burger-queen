@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import firebase from '../firestore.js';
-import './menu.css';
+import './Menu.css';
 
 const db = firebase.firestore();
 
-export class Desayuno extends Component {
+/* export class Desayuno extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +23,7 @@ export class Desayuno extends Component {
         })
       });
   } */
-
+/*
   componentDidMount() {
     db.collection('menu').get()
     .then(json => {
@@ -35,7 +35,7 @@ export class Desayuno extends Component {
           items: doc
         })
       })
-      });
+    });
   }
 
   render() {
@@ -61,54 +61,62 @@ export class Desayuno extends Component {
       )
     }
   }
-}
+} */
 
-export class Menu extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [],
-      isLoaded: false
-    }
-  }
+const useFirebase = () => {
+  const [items, setItems] = useState([]);
 
-  componentDidMount() {
+  useEffect( () => {
     db.collection('menu').get()
     .then(json => {
-      let doc = []
+      let items = []
       json.forEach(docu => {
-        doc.push(docu.data());
-        this.setState({
-          isLoaded: true,
-          items: doc
-        })
+        items.push(docu.data());
       })
-      });
-  }
+      setItems(items);
+    });
+  }, []);
+  return items;
+};
 
-  render() {
-    const { isLoaded, items } = this.state;
 
-    if(!isLoaded) {
-      return <div>Loading...</div>
-    } else{
-        return (
-          <div className='blocks'>
-            { 
-              items.map(item => {
-                if (item.categoria === 'allDay') { 
-                  return ( 
-                    <button className='product back-dos' key={item.id} >
-                      <p>{item.nombre}: </p>
-                      <p>$ {item.precio}.00</p>               
-                    </button>
-                  )
-                }
-              })
-            }
-          </div>
+export const Desayuno = () => {
+  const items = useFirebase();
+  return (
+    <div className='blocks'>
+      { 
+        items.map(item => {
+          if (item.categoria === 'Desayuno') { 
+            return ( 
+              <button className='product back-tres' key={item.id}>
+                <p >{item.nombre}:</p>
+                <p>$ {item.precio}.00</p>
+              </button>
+              )
+          }
+        })
+      }
+    </div>
+  )
+}
 
-      )
-    }
-  }
+export const Menu = () => {
+  const items = useFirebase();  
+
+  return (
+    <div className='blocks'>
+      { 
+        items.map(item => {
+          if (item.categoria === 'allDay') { 
+            return ( 
+              <button className='product back-dos' key={item.id} >
+                <p>{item.nombre}: </p>
+                <p>$ {item.precio}.00</p>               
+              </button>
+            )
+          }
+        })
+      }
+    </div>
+  )
 }
