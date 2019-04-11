@@ -17,7 +17,8 @@ export const useFirebase = () => {
     }, []);
     return items;
   };
-  
-  export const sendProduct = () => {
-    console.log('hola');
+
+  export const deleteProduct = (id, arr) => {
+    arr.splice(arr.indexOf(arr.find(e => e.id === id )));
+    console.log(arr);
   }

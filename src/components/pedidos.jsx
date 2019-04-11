@@ -1,7 +1,8 @@
 import React, { Component, useState } from 'react';
+import { deleteProduct } from './Firebase';
 import './Pedidos.css';
 
-export const Pedidos = ({menu}) => {
+const Pedidos = ({menu}) => {
   return ( 
     <div>
       <h5>Ingrese nombre del cliente:</h5>
@@ -20,7 +21,7 @@ export const Pedidos = ({menu}) => {
           <tbody>
             {menu.map((p) => {
               return (
-                <tr>
+                <tr key={p.id}>
                   <td>{p.nombre}</td>
                   <td>
                     <button><i className="fas fa-minus"></i></button>
@@ -30,7 +31,7 @@ export const Pedidos = ({menu}) => {
                   <td>{p.precio}</td>
                   <td>{p.count * p.precio}</td>
                   <td>
-                    <button><i className="fas fa-times"></i></button>   
+                    <button onClick={()=> deleteProduct(p.id, menu)}><i className="fas fa-times"></i></button>   
                   </td>
                 </tr>
               )
