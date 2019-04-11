@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import firebase from '../firestore.js';
 
 const db = firebase.firestore();
@@ -18,7 +18,9 @@ export const useFirebase = () => {
     return items;
   };
 
-  export const deleteProduct = (id, arr) => {
-    arr.splice(arr.indexOf(arr.find(e => e.id === id )));
-    console.log(arr);
-  }
+  export const deleteProduct = (id, arr, setMenu) => {
+   let filt = arr.filter(a => a !== (arr.find(e => e.id === id )));
+    setMenu(filt);
+    console.log(filt);
+  };
+

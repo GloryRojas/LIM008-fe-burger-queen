@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import { Menu, Desayuno } from './components/Menu';
@@ -12,7 +12,7 @@ const App = () => {
   const [pedido, setPedido] = useState([]);
 
   const sendProduct = (item) => {
-    setPedido([{...item, count:1}, ...pedido])
+    setPedido([item, ...pedido])
   }
 
   return ( 
@@ -30,7 +30,7 @@ const App = () => {
         </div>
         <div className='col back-uno'>
           <h3>PEDIDOS</h3>
-          <Pedidos menu={pedido} />
+          <Pedidos menu={pedido} setMenu={setPedido}/>
         </div>
       </div>
     </div> 
