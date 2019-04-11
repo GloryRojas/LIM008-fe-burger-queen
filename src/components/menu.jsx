@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import firebase from '../firestore.js';
+
 import './Menu.css';
 
-const db = firebase.firestore();
 
 /* export class Desayuno extends Component {
   constructor(props) {
@@ -12,8 +11,7 @@ const db = firebase.firestore();
       isLoaded: false
     }
   }
-
-/*   componentDidMount() {
+  componentDidMount() {
     fetch('https://raw.githubusercontent.com/GloryRojas/LIM008-fe-burger-queen/developer/src/menu/menu.json')
       .then(res => res.json())
       .then(json => {
@@ -22,8 +20,7 @@ const db = firebase.firestore();
           items: json
         })
       });
-  } */
-/*
+  } 
   componentDidMount() {
     db.collection('menu').get()
     .then(json => {
@@ -63,36 +60,19 @@ const db = firebase.firestore();
   }
 } */
 
-const useFirebase = () => {
-  const [items, setItems] = useState([]);
-
-  useEffect( () => {
-    db.collection('menu').get()
-    .then(json => {
-      let items = []
-      json.forEach(docu => {
-        items.push(docu.data());
-      })
-      setItems(items);
-    });
-  }, []);
-  return items;
-};
-
-
-export const Desayuno = () => {
-  const items = useFirebase();
+export const Desayuno = ({callback, sendProduct }) => {
+  const items = callback();
   return (
     <div className='blocks'>
       { 
         items.map(item => {
           if (item.categoria === 'Desayuno') { 
             return ( 
-              <button className='product back-tres' key={item.id}>
+              <button className='product back-tres' key={item.id} onClick={()=>sendProduct(item)}>
                 <p >{item.nombre}:</p>
                 <p>$ {item.precio}.00</p>
               </button>
-              )
+            )
           }
         })
       }
@@ -100,8 +80,8 @@ export const Desayuno = () => {
   )
 }
 
-export const Menu = () => {
-  const items = useFirebase();  
+export const Menu = ({callback, sendProduct}) => {
+  const items = callback();  
 
   return (
     <div className='blocks'>
@@ -109,9 +89,9 @@ export const Menu = () => {
         items.map(item => {
           if (item.categoria === 'allDay') { 
             return ( 
-              <button className='product back-dos' key={item.id} >
+              <button className='product back-dos' key={item.id} onClick={()=>sendProduct(item)}>
                 <p>{item.nombre}: </p>
-                <p>$ {item.precio}.00</p>               
+                <p>$ {item.precio}</p>               
               </button>
             )
           }
