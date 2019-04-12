@@ -24,3 +24,15 @@ export const useFirebase = () => {
     console.log(filt);
   };
 
+  export const addCount = (id, arr, setMenu, option) => {
+    let index = arr.indexOf(arr.find(e => e.id === id));
+    option ?
+    arr[index].cantidad = arr[arr.indexOf(arr.find(e=> e.id === id))].cantidad - 1 : 
+    arr[index].cantidad = arr[arr.indexOf(arr.find(e=> e.id === id))].cantidad + 1;
+    let newArr = [...arr];
+    setMenu(newArr);
+    console.log(newArr);
+  };
+
+
+

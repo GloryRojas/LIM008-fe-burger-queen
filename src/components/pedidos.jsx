@@ -1,14 +1,8 @@
 import React, {useState} from 'react';
-import { deleteProduct } from './Firebase';
+import { deleteProduct, addCount } from './Firebase';
 import './Pedidos.css';
 
 const Pedidos = ({menu, setMenu}) => {
-
-  const addCount = (num) => {
-    const [count, setCount] = useState(num);
-    setCount(count+1);
-    console.log(count)
-  };
 
   return ( 
     <div>
@@ -31,9 +25,9 @@ const Pedidos = ({menu, setMenu}) => {
                 <tr key={p.id}>
                   <td>{p.nombre}</td>
                   <td>
-                    <button onClick={()=>addCount(p.cantidad)}><i className="fas fa-minus"></i></button>
+                    <button onClick={()=>addCount(p.id, menu, setMenu, '-1')}><i className="fas fa-minus"></i></button>
                     {p.cantidad}
-                    <button><i className="fas fa-plus"></i></button>
+                    <button onClick={()=>addCount(p.id, menu, setMenu)}><i className="fas fa-plus"></i></button>
                   </td>
                   <td>{p.precio}</td>
                   <td>{p.cantidad * p.precio}</td>
