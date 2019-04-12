@@ -1,0 +1,19 @@
+.sign{
+    font-size: 8px;
+    color: white;
+    height: 18px;
+    width: 18px;
+    background-color: #282c34;
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+.column span{
+    font-size: 18px;
+}
+.column{
+    align-content: center;
+}
+.data-product p{
+    font-size: 12px;
+}

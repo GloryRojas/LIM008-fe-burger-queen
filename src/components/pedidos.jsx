@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { deleteProduct, addCount } from './Firebase';
 import './Pedidos.css';
 
@@ -9,30 +9,30 @@ const Pedidos = ({menu, setMenu}) => {
       <h5>Ingrese nombre del cliente:</h5>
       <input type='text'></input>
       <div>
-        <table>
+        <table className='column'>
           <thead>
             <tr>
-              <th>PRODUCTO</th>
-              <th>CANTIDAD</th>
-              <th>P /UNIT $</th>
-              <th>P /TOTAL $</th>
-              <th>P /ELIMIN $</th>
+              <th><span>PRODUCTO</span></th>
+              <th><span>CANTIDAD</span></th>
+              <th><span>TOTAL($)</span></th>
+              <th><span>ELIMIN</span></th>
             </tr>
           </thead>
           <tbody>
             {menu.map((p) => {
               return (
                 <tr key={p.id}>
-                  <td>{p.nombre}</td>
+                  <td><span>{p.nombre}</span></td>
                   <td>
-                    <button onClick={()=>addCount(p.id, menu, setMenu, '-1')}><i className="fas fa-minus"></i></button>
-                    {p.cantidad}
-                    <button onClick={()=>addCount(p.id, menu, setMenu)}><i className="fas fa-plus"></i></button>
+                    <span onClick={()=>addCount(p.id, menu, setMenu, '-1')}><i className="fas fa-minus sign"></i></span>
+                    {'  '}
+                    <span>{p.cantidad}</span>
+                    {'  '}
+                    <span onClick={()=>addCount(p.id, menu, setMenu)}><i className="fas fa-plus sign"></i></span>
                   </td>
-                  <td>{p.precio}</td>
-                  <td>{p.cantidad * p.precio}</td>
+                  <td><span>{p.cantidad * p.precio}</span></td>
                   <td>
-                    <button onClick={()=> deleteProduct(p.id, menu, setMenu)}><i className="fas fa-times"></i></button>   
+                    <span onClick={()=> deleteProduct(p.id, menu, setMenu)}><i className="fas fa-times sign"></i></span>   
                   </td>
                 </tr>
               )
