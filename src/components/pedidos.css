@@ -8,12 +8,21 @@
     border-radius: 3px;
     margin-bottom: 5px;
 }
-.column span{
-    font-size: 18px;
-}
-.column{
-    align-content: center;
-}
+
 .data-product p{
     font-size: 12px;
+}
+
+table{
+    margin: 30px;
+    align-content: center;
+}
+table thead{
+    background-color: #FFBE00;
+}
+table th{
+    padding: 10px;
+}
+table span{
+    font-size: 18px;
 }

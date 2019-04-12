@@ -34,5 +34,9 @@ export const useFirebase = () => {
     console.log(newArr);
   };
 
+  export const saludo = (arr) => {
+   let suma = (arr.map((a) => a.cantidad * a.precio)).reduce((a,b) => a+b , 0);
+   return suma;
+  };
 
 

@@ -59,7 +59,7 @@ import './Menu.css';
   }
 } */
 
-export const Desayuno = ({callback, sendProduct }) => {
+export const Desayuno = ({callback, sendProduct, pedido }) => {
   const items = callback();
   return (
     <div className='blocks'>
@@ -67,10 +67,10 @@ export const Desayuno = ({callback, sendProduct }) => {
         items.map(item => {
           if (item.categoria === 'Desayuno') { 
             return ( 
-              <button className='product back-tres' key={item.id} onClick={()=>sendProduct(item)}>
+              <div className='product back-tres' key={item.id} onClick={()=>sendProduct(item,pedido)}>
                 <p >{item.nombre}:</p>
                 <p>$ {item.precio}.00</p>
-              </button>
+              </div>
             )
           }
         })
@@ -79,7 +79,7 @@ export const Desayuno = ({callback, sendProduct }) => {
   )
 }
 
-export const Menu = ({callback, sendProduct}) => {
+export const Menu = ({callback, sendProduct,pedido}) => {
   const items = callback();  
 
   return (
@@ -88,7 +88,7 @@ export const Menu = ({callback, sendProduct}) => {
         items.map(item => {
           if (item.categoria === 'allDay') { 
             return ( 
-              <button className='product back-dos' key={item.id} onClick={()=>sendProduct(item)}>
+              <button className='product back-dos' key={item.id} onClick={()=>sendProduct(item,pedido)}>
                 <p>{item.nombre}: </p>
                 <p>$ {item.precio}</p>               
               </button>

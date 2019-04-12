@@ -11,8 +11,10 @@ const App = () => {
   const [menuVisible, setMenu] = useState(false);
   const [pedido, setPedido] = useState([]);
 
-  const sendProduct = (item) => {
-    setPedido([item, ...pedido])
+  const sendProduct = (item,pedido) => {
+     const itemPedido = pedido.find(e=>e.id===item.id)
+     itemPedido ? setPedido([...pedido]):setPedido([item,...pedido])
+
   }
 
   return ( 
@@ -24,8 +26,8 @@ const App = () => {
           <button onClick={() => { setDesayuno(!desayunoVisible) }}>Desayuno</button>
           <button onClick={() => { setMenu(!menuVisible) }}>Resto del día</button>
           <div>
-            {desayunoVisible && <Desayuno callback={useFirebase} sendProduct={sendProduct}/>}
-            {menuVisible && <Menu callback={useFirebase} sendProduct={sendProduct}/>}
+            {desayunoVisible && <Desayuno callback={useFirebase} sendProduct={sendProduct} pedido={pedido}/>}
+            {menuVisible && <Menu callback={useFirebase} sendProduct={sendProduct}  pedido={pedido}/>}
           </div>
         </div>
         <div className='col back-uno'>
