@@ -1,38 +1,44 @@
-import React from 'react';
-import { deleteProduct, addCount } from './Firebase';
+import React, {useState} from 'react';
+import { deleteProduct } from './Firebase';
 import './Pedidos.css';
 
 const Pedidos = ({menu, setMenu}) => {
+
+  const addCount = (num) => {
+    const [count, setCount] = useState(num);
+    setCount(count+1);
+    console.log(count)
+  };
 
   return ( 
     <div>
       <h5>Ingrese nombre del cliente:</h5>
       <input type='text'></input>
       <div>
-        <table className='column'>
+        <table>
           <thead>
             <tr>
-              <th><span>PRODUCTO</span></th>
-              <th><span>CANTIDAD</span></th>
-              <th><span>TOTAL($)</span></th>
-              <th><span>ELIMIN</span></th>
+              <th>PRODUCTO</th>
+              <th>CANTIDAD</th>
+              <th>P /UNIT $</th>
+              <th>P /TOTAL $</th>
+              <th>P /ELIMIN $</th>
             </tr>
           </thead>
           <tbody>
             {menu.map((p) => {
               return (
                 <tr key={p.id}>
-                  <td><span>{p.nombre}</span></td>
+                  <td>{p.nombre}</td>
                   <td>
-                    <span onClick={()=>addCount(p.id, menu, setMenu, '-1')}><i className="fas fa-minus sign"></i></span>
-                    {'  '}
-                    <span>{p.cantidad}</span>
-                    {'  '}
-                    <span onClick={()=>addCount(p.id, menu, setMenu)}><i className="fas fa-plus sign"></i></span>
+                    <button onClick={()=>addCount(p.cantidad)}><i className="fas fa-minus"></i></button>
+                    {p.cantidad}
+                    <button><i className="fas fa-plus"></i></button>
                   </td>
-                  <td><span>{p.cantidad * p.precio}</span></td>
+                  <td>{p.precio}</td>
+                  <td>{p.cantidad * p.precio}</td>
                   <td>
-                    <span onClick={()=> deleteProduct(p.id, menu, setMenu)}><i className="fas fa-times sign"></i></span>   
+                    <button onClick={()=> deleteProduct(p.id, menu, setMenu)}><i className="fas fa-times"></i></button>   
                   </td>
                 </tr>
               )
