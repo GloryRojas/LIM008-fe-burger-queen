@@ -3,40 +3,47 @@ import firebase from '../firestore.js';
 
 const db = firebase.firestore();
 export const useFirebase = () => {
-    const [items, setItems] = useState([]);
-  
-    useEffect( () => {
-      db.collection('menu').get()
-      .then(json => {
-        let items = []
-        json.forEach(docu => {
-          items.push(docu.data());
-        })
-        setItems(items);
-      });
-    }, []);
-    return items;
+  const [items, setItems] = useState([]);
+
+  useEffect( () => {
+    db.collection('menu').get()
+    .then(json => {
+      let items = []
+      json.forEach(docu => {
+        items.push(docu.data());
+      })
+      setItems(items);
+    });
+  }, []);
+  return items;
+};
+
+export const deleteProduct = (p, arr, setMenu) => {
+  let filt = arr.filter(a => a !== (arr.find(e => e.id === p.id )));
+  p.cantidad = 1;
+  setMenu(filt);
+  console.log(filt);
+};
+
+export const addCount = (obj, arr, setMenu, option) => {
+  if(option){
+    obj.cantidad += 1;
+    setMenu([...arr]);
+  } else {
+    obj.cantidad -= 1;
+    setMenu([...arr]);
+  }
+  console.log(arr);
+};
+
+export const totalPrice = (arr) => {
+  let suma = (arr.map((a) => a.cantidad * a.precio)).reduce((a,b) => a+b ,0);
+  return suma;
+};
+
+export const cancel = (setMenu) => {
+  setMenu([]);
   };
 
-  export const deleteProduct = (id, arr, setMenu) => {
-   let filt = arr.filter(a => a !== (arr.find(e => e.id === id )));
-    setMenu(filt);
-    console.log(filt);
-  };
-
-  export const addCount = (id, arr, setMenu, option) => {
-    let index = arr.indexOf(arr.find(e => e.id === id));
-    option ?
-    arr[index].cantidad -= 1 : 
-    arr[index].cantidad += 1;
-    let newArr = [...arr];
-    setMenu(newArr);
-    console.log(newArr);
-  };
-
-  export const saludo = (arr) => {
-   let suma = (arr.map((a) => a.cantidad * a.precio)).reduce((a,b) => a+b , 0);
-   return suma;
-  };
-
+   
 
