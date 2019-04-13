@@ -1,13 +1,15 @@
-import React from 'react';
-import { deleteProduct, addCount, cancel, totalPrice } from './Firebase';
+import React, {setState} from 'react';
+import { deleteProduct, addCount, cancel, totalPrice, sendOrder } from './Firebase';
 import './Pedidos.css';
 
 const Pedidos = ({menu, setMenu}) => {
-
+  /* const [name, setName] = setState('');
+  console.log(name) */
+  let totalPrecio = totalPrice(menu);
   return ( 
     <div>
       <h5>Ingrese nombre del cliente:</h5>
-      <input type='text'></input>
+      <input type='text' /* onChange={e => setName(e.currentTarget.value)} */></input>
       <div>
         <table className='column'>
           <thead>
@@ -40,13 +42,13 @@ const Pedidos = ({menu, setMenu}) => {
             <tr>
               <th><span>TOTAL</span></th>
               <th><span>{' '}$. {' '}</span></th>
-              <th>{totalPrice(menu)}</th>
+              <th>{totalPrecio}</th>
             </tr>
           </tbody>
         </table> 
       </div>
       <button onClick={()=>cancel(setMenu)} >Cancelar pedido</button>
-      <button>Enviar pedido</button>
+      <button onClick={()=>sendOrder(menu, totalPrecio)}>Enviar pedido</button>
     </div>
   )
 };

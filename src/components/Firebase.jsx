@@ -22,7 +22,6 @@ export const deleteProduct = (p, arr, setMenu) => {
   let filt = arr.filter(a => a !== (arr.find(e => e.id === p.id )));
   p.cantidad = 1;
   setMenu(filt);
-  console.log(filt);
 };
 
 export const addCount = (obj, arr, setMenu, option) => {
@@ -33,7 +32,6 @@ export const addCount = (obj, arr, setMenu, option) => {
     obj.cantidad -= 1;
     setMenu([...arr]);
   }
-  console.log(arr);
 };
 
 export const totalPrice = (arr) => {
@@ -43,7 +41,15 @@ export const totalPrice = (arr) => {
 
 export const cancel = (setMenu) => {
   setMenu([]);
-  };
+};
 
+export const sendOrder = (pedido, total) => {
+  return firebase.firestore().collection('pedidos').add({
+    cliente: 'nombre',
+    Hora: Date(),
+    Productos: pedido,
+    total: total,
+    });
+};
    
 
