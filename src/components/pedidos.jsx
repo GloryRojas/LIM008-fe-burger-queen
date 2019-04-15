@@ -1,15 +1,14 @@
-import React, {setState} from 'react';
+import React, { useState }from 'react';
 import { deleteProduct, addCount, cancel, totalPrice, sendOrder } from './Firebase';
-import './Pedidos.css';
+import './pedidos.css';
 
-const Pedidos = ({menu, setMenu}) => {
-  /* const [name, setName] = setState('');
-  console.log(name) */
-  let totalPrecio = totalPrice(menu);
+const Pedidos = (props) => {
+  const [name, setName] = useState('');
+  let totalPrecio = totalPrice(props.menu);
   return ( 
     <div>
       <h5>Ingrese nombre del cliente:</h5>
-      <input type='text' /* onChange={e => setName(e.currentTarget.value)} */></input>
+      <input type='text' onChange={e => setName(e.currentTarget.value)}></input>
       <div>
         <table className='column'>
           <thead>
@@ -21,20 +20,20 @@ const Pedidos = ({menu, setMenu}) => {
             </tr>
           </thead>
           <tbody>
-            {menu.map((p) => {
+            {props.menu.map((p) => {
               return (
                 <tr key={p.id}>
                 <td><span>{p.nombre}</span></td>
                 <td>
-                  <span onClick={()=>addCount(p, menu, setMenu)}><i className="fas fa-minus sign"></i></span>
+                  <span onClick={()=>addCount(p, props.menu, props.setMenu)}><i className="fas fa-minus sign"></i></span>
                   {'  '}
                   <span>{p.cantidad}</span>
                   {'  '}
-                  <span onClick={()=>addCount(p, menu, setMenu, '+1')}><i className="fas fa-plus sign"></i></span>
+                  <span onClick={()=>addCount(p, props.menu, props.setMenu, '+1')}><i className="fas fa-plus sign"></i></span>
                 </td>
                 <td><span>{p.cantidad * p.precio}</span></td>
                 <td>
-                  <span onClick={()=> deleteProduct(p, menu, setMenu)}><i className="fas fa-times sign"></i></span>   
+                  <span onClick={()=> deleteProduct(p, props.menu, props.setMenu)}><i className="fas fa-times sign"></i></span>   
                 </td>
               </tr>
               )
@@ -47,8 +46,8 @@ const Pedidos = ({menu, setMenu}) => {
           </tbody>
         </table> 
       </div>
-      <button onClick={()=>cancel(setMenu)} >Cancelar pedido</button>
-      <button onClick={()=>sendOrder(menu, totalPrecio)}>Enviar pedido</button>
+      <button onClick={()=>cancel(props.setMenu)} >Cancelar pedido</button>
+      <button onClick={()=>sendOrder(props.menu, totalPrecio, name, props.setMenu)}>Enviar pedido</button>
     </div>
   )
 };

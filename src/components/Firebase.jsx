@@ -43,12 +43,13 @@ export const cancel = (setMenu) => {
   setMenu([]);
 };
 
-export const sendOrder = (pedido, total) => {
+export const sendOrder = (pedido, total, name, setMenu) => {
+  setMenu([]);
   return firebase.firestore().collection('pedidos').add({
-    cliente: 'nombre',
+    Cliente: name,
     Hora: Date(),
     Productos: pedido,
-    total: total,
+    Total: total,
     });
 };
    
