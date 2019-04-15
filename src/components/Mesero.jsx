@@ -23,8 +23,8 @@ const Mesero = () => {
       <div className='bodrow'>
         <div className='col back-uno'>
           <h3>MENÚ</h3>
-          <button onClick={() => { setDesayuno(!desayunoVisible) }}>Desayuno</button>
-          <button onClick={() => { setMenu(!menuVisible) }}>Resto del día</button>
+          <button onClick={() => { setDesayuno(!desayunoVisible)}}>Desayuno</button>
+          <button onClick={() => { setMenu(!menuVisible)}}>Resto del día</button>
           <div>
             {desayunoVisible && <Desayuno callback={useFirebase} sendProduct={sendProduct} pedido={pedido}/>}
             {menuVisible && <Menu callback={useFirebase} sendProduct={sendProduct}  pedido={pedido}/>}
