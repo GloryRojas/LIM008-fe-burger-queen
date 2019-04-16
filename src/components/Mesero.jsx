@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Mesero.css';
-import { Menu, Desayuno } from './menu';
-import { useFirebase } from './Firebase'
-import Pedidos from './pedidos';
+import { Menu, Desayuno } from './Menu';
+import { useFirebase } from './Firebase';
+import Pedidos from './Pedidos';
 
 const Mesero = () => {
   const [desayunoVisible, setDesayuno] = useState(false);
@@ -14,7 +14,7 @@ const Mesero = () => {
     itemPedido ? setPedido([...menu]) : setPedido([item,...menu]);
   };
 
-  return ( 
+  return (
     <div className="bodrow">
       <div className="col back-uno">
         <h3>MENÚ</h3>

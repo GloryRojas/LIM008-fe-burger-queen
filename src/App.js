@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Mesero from './components/Mesero';
 import Cocinero from './components/Cocinero';
-import Header from './components/header';
+import Header from './components/Header';
 import Inicio from './components/Inicio';
 
 const App = () => (

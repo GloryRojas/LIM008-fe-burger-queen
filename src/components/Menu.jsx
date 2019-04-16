@@ -19,7 +19,7 @@ import './Menu.css';
           items: json
         })
       });
-} 
+}
   componentDidMount() {
     db.collection('menu').get()
     .then(json => {
@@ -41,10 +41,10 @@ import './Menu.css';
     } else{
         return (
           <div className='blocks'>
-            { 
+            {
               items.map(item => {
-                if (item.categoria === 'Desayuno') { 
-                  return ( 
+                if (item.categoria === 'Desayuno') {
+                  return (
                     <button className='product back-tres' key={item.id}>
                       <p >{item.nombre}:</p>
                       <p>$ {item.precio}.00</p>
@@ -62,37 +62,45 @@ import './Menu.css';
 export const Desayuno = ({callback, sendProduct, pedido }) => {
   const items = callback();
   return (
-    <div className='blocks'>
-      { items.map(item => {
-          if (item.categoria === 'Desayuno') { 
+    <div className="blocks">
+      {items.map(item => {
+          if (item.categoria === 'Desayuno') {
             return ( 
-              <div className='product back-tres' key={item.id} onClick={() => sendProduct(item, pedido)}>
-                <p >{item.nombre}:</p>
-                <p>$ {item.precio}.00</p>
-              </div>
-            )
-          }
-        })
+              <button type="button" className='product back-tres' key={item.id} onClick={() => sendProduct(item, pedido)}>
+                <p >
+                  {item.nombre}:
+                </p>
+                <p>
+                  {item.precio}
+                </p>
+              </button>
+          )
+        }
+      })
       }
     </div>
-  )
-}
+  );
+};
 
-export const Menu = (props) => {
-  const items = props.callback();
+export const Menu = ({ callback, sendProduct, pedido }) => {
+  const items = callback();
   return (
     <div className="blocks">
       {items.map(item => {
-        if (item.categoria === 'allDay') { 
-          return ( 
-            <button className='product back-dos' key={item.id} onClick={()=>props.sendProduct(item,props.pedido)}>
-              <p>{item.nombre}: </p>
-              <p>$ {item.precio}</p>
+        if (item.categoria === 'allDay') {
+          return (
+            <button type="button" className="product back-dos" key={item.id} onClick={()=>sendProduct(item, pedido)}>
+              <p>
+                {item.nombre}:
+              </p>
+              <p>
+                {item.precio}
+              </p>
             </button>
             );
           }
         })
-      };
+      }
     </div>
   );
 };
