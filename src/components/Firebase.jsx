@@ -24,7 +24,8 @@ export const deleteProduct = (p, arr, setMenu) => {
   setMenu(filt);
 };
 
-export const addCount = (obj, arr, setMenu, option) => {
+export const addCount = (obj, menu, setMenu, option) => {
+  const arr = [...menu];
   if(option){
     obj.cantidad += 1;
     setMenu([...arr]);

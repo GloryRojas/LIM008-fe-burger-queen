@@ -1,5 +1,5 @@
 import React from 'react';
-import './menu.css';
+import './Menu.css';
 
 
 /* export class Desayuno extends Component {
@@ -19,7 +19,7 @@ import './menu.css';
           items: json
         })
       });
-  } 
+} 
   componentDidMount() {
     db.collection('menu').get()
     .then(json => {
@@ -63,11 +63,10 @@ export const Desayuno = ({callback, sendProduct, pedido }) => {
   const items = callback();
   return (
     <div className='blocks'>
-      { 
-        items.map(item => {
+      { items.map(item => {
           if (item.categoria === 'Desayuno') { 
             return ( 
-              <div className='product back-tres' key={item.id} onClick={()=>sendProduct(item,pedido)}>
+              <div className='product back-tres' key={item.id} onClick={() => sendProduct(item, pedido)}>
                 <p >{item.nombre}:</p>
                 <p>$ {item.precio}.00</p>
               </div>
@@ -79,23 +78,21 @@ export const Desayuno = ({callback, sendProduct, pedido }) => {
   )
 }
 
-export const Menu = ({callback, sendProduct,pedido}) => {
-  const items = callback();  
-
+export const Menu = (props) => {
+  const items = props.callback();
   return (
-    <div className='blocks'>
-      { 
-        items.map(item => {
-          if (item.categoria === 'allDay') { 
-            return ( 
-              <button className='product back-dos' key={item.id} onClick={()=>sendProduct(item,pedido)}>
-                <p>{item.nombre}: </p>
-                <p>$ {item.precio}</p>               
-              </button>
-            )
+    <div className="blocks">
+      {items.map(item => {
+        if (item.categoria === 'allDay') { 
+          return ( 
+            <button className='product back-dos' key={item.id} onClick={()=>props.sendProduct(item,props.pedido)}>
+              <p>{item.nombre}: </p>
+              <p>$ {item.precio}</p>
+            </button>
+            );
           }
         })
-      }
+      };
     </div>
-  )
-}
+  );
+};
