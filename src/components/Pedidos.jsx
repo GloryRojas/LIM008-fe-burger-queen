@@ -46,7 +46,7 @@ const Pedidos = ({ menu, setMenu }) => {
             )}
             <tr>
               <th><span>TOTAL</span></th>
-              <th><span>{' '}$. {' '}</span></th>
+              <th><span>{' '}&#36; {' '}</span></th>
               <th>{totalPrecio}</th>
             </tr>
           </tbody>
