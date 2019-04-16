@@ -1,30 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import Header from './components/header.jsx';
-import { Menu, Desayuno } from './components/menu.jsx';
-import Pedidos from './components/pedidos.jsx'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Mesero from './components/Mesero';
+import Cocinero from './components/Cocinero';
+import Header from './components/header';
+import Inicio from './components/Inicio';
 
-class App extends Component {
+const App = () => (
+  <Router>
+    <div>
+      <Header />
 
-  render() {
-    return ( 
-      <div className=''>
-        <Header />
-        <div className='bodrow'>
-          <div className='col back-uno'>
-            <h3>MENÚ</h3>
-            <button onClick={<Desayuno />}>Desayuno</button>
-            <button onClick={<Menu />}>Resto del Día</button>
-            <Desayuno />
-            <Menu />
-          </div>
-          <div className='col back-uno'>
-            <h3>PEDIDOS</h3>
-            <Pedidos />
-          </div>
-        </div>
-      </div> 
-    )};
-};
+      <Route exact path="/" component={Inicio} />
+      <Route path="/Cocinero" component={Cocinero} />
+      <Route path="/Mesero" component={Mesero} />
+    </div>
+  </Router>
+);
 
 export default App;
