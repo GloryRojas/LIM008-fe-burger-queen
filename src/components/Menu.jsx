@@ -1,7 +1,7 @@
 import React from 'react';
 import './Menu.css';
 import PropTypes from 'prop-types';
-import { filterMenu } from './Utils';
+import { filterMenu } from './utils';
 
 /* export class Desayuno extends Component {
   constructor(props) {
@@ -60,13 +60,18 @@ import { filterMenu } from './Utils';
   }
 } */
 
-const Menu = ({ callback, sendProduct, pedido, stat }) => {
+const Menu = ({
+  callback,
+  sendProduct,
+  pedido,
+  stat,
+}) => {
   const items = filterMenu(callback(), stat);
   return (
     <div className="blocks">
       {items.map(item => (
-        <button type="button" className="product back-dos" key={item.id} onClick={() => sendProduct(item, pedido)}>
-          <p>
+        <button data-testid={`${item.id}-button`} type="button" className="product back-dos" key={item.id} onClick={() => sendProduct(item, pedido)}>
+          <p data-testid={`${item.id}-nombre`}>
             {item.nombre}
           </p>
           <p>

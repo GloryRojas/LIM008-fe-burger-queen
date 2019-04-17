@@ -11,9 +11,10 @@ const Mesero = () => {
 
   const sendProduct = (item, menu) => {
     const itemPedido = menu.find(e => e.id === item.id);
-    itemPedido
-      ? setPedido([...menu])
-      : setPedido([item, ...menu]);
+    const newPedido = itemPedido
+      ? [...menu]
+      : [item, ...menu];
+    setPedido(newPedido);
   };
 
   return (

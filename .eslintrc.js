@@ -2,12 +2,16 @@ module.exports = {
   "extends": "airbnb",
   "plugins": [
       "react",
-      "react-hooks"
+      "react-hooks",
+      ["jest"]
   ],
   "rules": {
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
-      "linebreak-style": 0
+      "linebreak-style": 0,
+  },
+  "env": {
+    "jest/globals": true
   }
 };
