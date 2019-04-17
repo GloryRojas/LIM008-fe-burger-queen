@@ -1,11 +1,9 @@
 import React from 'react';
 
-const Cocinero = () => {
-    return (
-        <div>
-            Aqui los pedidos ya registrados.
-        </div>
-    )
-};
+const Cocinero = () => (
+  <div>
+    <p>Aqui los pedidos ya registrados.</p>
+  </div>
+);
 
 export default Cocinero;

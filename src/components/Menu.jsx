@@ -1,6 +1,7 @@
 import React from 'react';
 import './Menu.css';
-
+import PropTypes from 'prop-types';
+import { filterMenu } from './Utils';
 
 /* export class Desayuno extends Component {
   constructor(props) {
@@ -59,48 +60,30 @@ import './Menu.css';
   }
 } */
 
-export const Desayuno = ({callback, sendProduct, pedido }) => {
-  const items = callback();
+const Menu = ({ callback, sendProduct, pedido, stat }) => {
+  const items = filterMenu(callback(), stat);
   return (
     <div className="blocks">
-      {items.map(item => {
-          if (item.categoria === 'Desayuno') {
-            return ( 
-              <button type="button" className='product back-tres' key={item.id} onClick={() => sendProduct(item, pedido)}>
-                <p >
-                  {item.nombre}:
-                </p>
-                <p>
-                  {item.precio}
-                </p>
-              </button>
-          )
-        }
-      })
+      {items.map(item => (
+        <button type="button" className="product back-dos" key={item.id} onClick={() => sendProduct(item, pedido)}>
+          <p>
+            {item.nombre}
+          </p>
+          <p>
+            {item.precio}
+          </p>
+        </button>
+      ))
       }
     </div>
   );
 };
 
-export const Menu = ({ callback, sendProduct, pedido }) => {
-  const items = callback();
-  return (
-    <div className="blocks">
-      {items.map(item => {
-        if (item.categoria === 'allDay') {
-          return (
-            <button type="button" className="product back-dos" key={item.id} onClick={()=>sendProduct(item, pedido)}>
-              <p>
-                {item.nombre}:
-              </p>
-              <p>
-                {item.precio}
-              </p>
-            </button>
-            );
-          }
-        })
-      }
-    </div>
-  );
+Menu.propTypes = {
+  callback: PropTypes.func.isRequired,
+  sendProduct: PropTypes.func.isRequired,
+  pedido: PropTypes.arrayOf(PropTypes.object).isRequired,
+  stat: PropTypes.string.isRequired,
 };
+
+export default Menu;
