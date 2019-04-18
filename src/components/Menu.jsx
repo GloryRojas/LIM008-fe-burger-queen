@@ -66,7 +66,7 @@ const Menu = ({
   pedido,
   stat,
 }) => {
-  const items = filterMenu(callback(), stat);
+  const items = filterMenu(callback('menu'), stat);
   return (
     <div className="blocks">
       {items.map(item => (

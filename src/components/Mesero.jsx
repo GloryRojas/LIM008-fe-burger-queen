@@ -3,6 +3,7 @@ import './Mesero.css';
 import Menu from './Menu';
 import { useFirebase } from './Firebase';
 import Pedidos from './Pedidos';
+import Header from './Header';
 
 const Mesero = () => {
   const [desVis, setDesayuno] = useState(false);
@@ -18,19 +19,22 @@ const Mesero = () => {
   };
 
   return (
-    <div className="bodrow">
-      <div className="col back-uno">
-        <h3>MENÚ</h3>
-        <button type="button" onClick={() => setDesayuno(!desVis)}>Desayuno</button>
-        <button type="button" onClick={() => setMenu(!menuVis)}>Resto del día</button>
-        <div>
-          {desVis && <Menu callback={useFirebase} sendProduct={sendProduct} pedido={pedido} stat="Desayuno" />}
-          {menuVis && <Menu callback={useFirebase} sendProduct={sendProduct} pedido={pedido} stat="allDay" />}
+    <div>
+      <Header />
+      <div className="bodrow">
+        <div className="col back-uno">
+          <h3>MENÚ</h3>
+          <button type="button" onClick={() => setDesayuno(!desVis)}>Desayuno</button>
+          <button type="button" onClick={() => setMenu(!menuVis)}>Resto del día</button>
+          <div>
+            {desVis && <Menu callback={useFirebase} sendProduct={sendProduct} pedido={pedido} stat="Desayuno" />}
+            {menuVis && <Menu callback={useFirebase} sendProduct={sendProduct} pedido={pedido} stat="allDay" />}
+          </div>
         </div>
-      </div>
-      <div className="col back-uno">
-        <h3>PEDIDOS</h3>
-        <Pedidos menu={pedido} setMenu={setPedido} />
+        <div className="col back-uno">
+          <h3>PEDIDOS</h3>
+          <Pedidos menu={pedido} setMenu={setPedido} />
+        </div>
       </div>
     </div>
   );
