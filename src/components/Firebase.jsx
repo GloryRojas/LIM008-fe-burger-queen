@@ -27,5 +27,6 @@ export const sendOrder = (pedido, total, name, setMenu, setName) => {
     Hora: `${new Date().getHours()}:${ new Date().getMinutes()}`,
     Productos: pedido,
     Total: total,
+    id: name+total,
   });
 };

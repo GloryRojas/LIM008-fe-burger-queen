@@ -1,13 +1,19 @@
-.header{
-  font-size: 40px;
+header{
   background-color: #282c34;
   min-height: 10vh;
   display: block;
-  color: white;
-  padding: 20px;
   text-align: center;
 }
 
-h1{
-  display: inline;
+.name-header{
+  width: 70%;
+  display: flex;
+  font-size: 40px;
+  color: white;
+}
+
+.link-router{
+  width: 10%;
+  display: flex;
+  font-size: 30px;
 }

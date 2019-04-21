@@ -6,22 +6,24 @@ const GetPedidos = ({ callback }) => {
   return (
     <div className="blocks">
       {items.map(item => (
-        <div className='ped'>
-          <p className='title'>{item.Cliente}</p>
-          <p className='title'>{item.Hora}</p>
-            <div className="col">
+        <div className='ped' key={item.id}>
+          <p className='title'>Cliente: {item.Cliente}</p>
+          <p className='hora-pedido'>Hora Pedido: {item.Hora}</p>
+          <hr />
+            <div className="col pedidos-fire">
               <div className="row">
-                <span className="col-8">PRODUCTO</span>
-                <span className="col-4">CANTIDAD</span>
+                <span className="col-8 head-pedidos">PRODUCTO</span>
+                <span className="col-4 head-pedidos">CANT.</span>
               </div>
               {item.Productos.map(prod => (
-              <div className="row">
+              <div className="row" key={prod.id}>
                 <span className="col-8">{prod.nombre}</span>
                 <span className="col-4">{prod.cantidad}</span>
               </div>
               ))}
             </div>
-          <p>Total: {item.Total}</p>
+            <hr />
+            <button>PEDIDO LISTO</button>
         </div>
       ))
       }
