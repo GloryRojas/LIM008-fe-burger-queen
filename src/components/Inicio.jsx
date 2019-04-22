@@ -5,15 +5,15 @@ import './Inicio.css';
 const Inicio = () => {
 return (
   <div>
-    <header className="header">
+    <header>
       <h1>&#60; COFFEE &amp; BURGUER &#62;</h1>
     </header>
     <div className="inicio">
-      <button className="nav-item">
-        <Link className="nav-link" to="/Mesero">Mesero</Link>
+      <button className="boton-router">
+        <Link to="/Mesero">Mesero</Link>
       </button>
-      <button className="nav-item">
-        <Link className="nav-link" to="/Cocinero">Cocinero</Link>
+      <button className="boton-router">
+        <Link to="/Cocinero">Cocinero</Link>
       </button>
     </div>
   </div>
