@@ -3,14 +3,12 @@ import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Mesero from './components/Mesero';
 import Cocinero from './components/Cocinero';
-import Header from './components/header';
 import Inicio from './components/Inicio';
 
 const App = () => (
   <Router>
     <div>
-      <Header />
-
+      
       <Route exact path="/" component={Inicio} />
       <Route path="/Cocinero" component={Cocinero} />
       <Route path="/Mesero" component={Mesero} />
