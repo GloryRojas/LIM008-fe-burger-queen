@@ -2,9 +2,11 @@
   "name": "burger-queen",
   "version": "0.1.0",
   "private": true,
+  "url": "https://gloryrojas.github.io/LIM008-fe-burger-queen/",
   "dependencies": {
     "@firebase/firestore": "^1.1.2",
     "firebase": "^5.9.2",
+    "gh-pages": "^2.0.1",
     "mock-cloud-firestore": "^0.9.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
@@ -13,10 +15,13 @@
     "react-scripts": "2.1.8"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run build-sw && npm run clean-cra-sw",
     "test": "react-scripts test --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-sw": "node ./src/sw-build.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,6 +39,24 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0",
-    "react-testing-library": "^6.1.2"
-  }
+    "react-testing-library": "^6.1.2",
+    "workbox-build": "^4.3.0"
+  },
+  "description": "[React](https://reactjs.org/) y [Angular](https://angular.io/)\r son algunos de los _frameworks_ y _librerías_ de JavaScript más utilizados por\r lxs desarrolladorxs alrededor del mundo, y hay una razón para eso.\r En el contexto del navegador, [_mantener la interfaz sincronizada con el estado\r es difícil_](https://medium.com/dailyjs/the-deepest-reason-why-modern-javascript-frameworks-exist-933b86ebc445).\r Al elegir un _framework_ o _librería_ para nuestra interfaz, nos apoyamos en una\r serie de convenciones e implementaciones _probadas_ y _documentadas_ para\r resolver un problema común a toda interfaz web. Esto nos permite concentrarnos\r mejor (dedicar más tiempo) en las caractrísticas _específicas_ de\r nuestra aplicación.",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GloryRojas/LIM008-fe-burger-queen.git"
+  },
+  "keywords": [
+    "React",
+    "JS",
+    "Bootstrap"
+  ],
+  "author": "Glory Rojas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GloryRojas/LIM008-fe-burger-queen/issues"
+  },
+  "homepage": "https://gloryrojas.github.io/LIM008-fe-burger-queen/"
 }
