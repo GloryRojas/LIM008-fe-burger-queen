@@ -24,9 +24,10 @@ export const sendOrder = (pedido, total, name, setMenu, setName) => {
   setName('');
   return firebase.firestore().collection('pedidos').add({
     Cliente: name,
+    Fecha: Date(),
     Hora: `${new Date().getHours()}:${ new Date().getMinutes()}`,
     Productos: pedido,
     Total: total,
-    id: name+total,
+    id: name + total,
   });
 };

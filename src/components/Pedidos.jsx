@@ -12,7 +12,10 @@ const Pedidos = ({ menu, setMenu }) => {
   const [name, setName] = useState('');
   const totalPrecio = totalPrice(menu);
   return (
-    <div>
+    <form onSubmit={(e) => {
+      e.preventDefault();
+      sendOrder(menu, totalPrecio, name, setMenu, setName);
+      }}>
       <h5>Ingrese nombre del cliente:</h5>
       <input type="text" onChange={e => setName(e.currentTarget.value)} />
       <div className="container">
@@ -42,8 +45,8 @@ const Pedidos = ({ menu, setMenu }) => {
         </div>
       </div>
       <button type="button" onClick={() => setMenu([])}>Cancelar pedido</button>
-      <button type="button" onClick={() => sendOrder(menu, totalPrecio, name, setMenu, setName)}>Enviar pedido</button>
-    </div>
+      <button type="submit" >Enviar pedido</button>
+    </form>
   );
 };
 

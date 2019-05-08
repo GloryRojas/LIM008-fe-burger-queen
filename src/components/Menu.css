@@ -8,16 +8,19 @@
     font-family: inherit;
 }
 
-.back-tres{
-    background-color: #00B18F;
-}
-.back-dos{
-    background-color: #FFBE00;
-}
 .blocks{
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin: 10px 0px 15px;
+}
+.img-menu{
+    width: 80%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+p{
+    font-weight: 600;
+    margin: 0 4px;
 }
