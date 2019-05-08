@@ -20,9 +20,7 @@ export const useFirebase = (stat) => {
 
 
 export const sendOrder = (pedido, total, name, setMenu, setName) => {
-  setMenu([]);
-  setName('');
-  return firebase.firestore().collection('pedidos').add({
+  firebase.firestore().collection('pedidos').add({
     Cliente: name,
     Hora: `${new Date().getHours()}:${ new Date().getMinutes()}`,
     Productos: pedido,

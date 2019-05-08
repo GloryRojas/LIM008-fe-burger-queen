@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import './Mesero.css';
 import Menu from './Menu';
-import { useFirebase } from './Firebase';
 import Pedidos from './Pedidos';
 import Header from './Header';
 
 const Mesero = () => {
-  const [desVis, setDesayuno] = useState(false);
-  const [menuVis, setMenu] = useState(false);
+  const [stat, setMenu] = useState('Desayuno');
   const [pedido, setPedido] = useState([]);
 
   const sendProduct = (item, menu) => {
@@ -24,11 +22,10 @@ const Mesero = () => {
       <div className="bodrow">
         <div className="col back-uno">
           <h3>MENÚ</h3>
-          <button type="button" onClick={() => setDesayuno(!desVis)}>Desayuno</button>
-          <button type="button" onClick={() => setMenu(!menuVis)}>Resto del día</button>
+          <button type="button" onClick={() => setMenu('Desayuno')}>Desayuno</button>
+          <button type="button" onClick={() => setMenu('allDay')}>Resto del día</button>
           <div>
-            {desVis && <Menu callback={useFirebase} sendProduct={sendProduct} pedido={pedido} stat="Desayuno" />}
-            {menuVis && <Menu callback={useFirebase} sendProduct={sendProduct} pedido={pedido} stat="allDay" />}
+            <Menu sendProduct={sendProduct} pedido={pedido} stat={stat} />
           </div>
         </div>
         <div className="col back-uno">
