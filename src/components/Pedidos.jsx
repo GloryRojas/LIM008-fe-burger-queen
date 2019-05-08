@@ -14,9 +14,7 @@ const Pedidos = ({ menu, setMenu }) => {
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
-      sendOrder(menu, totalPrecio, name);
-      setMenu([]);
-      setName('');
+      sendOrder(menu, totalPrecio, name, setMenu, setName);
       }}>
       <h5>Ingrese nombre del cliente:</h5>
       <input type="text" onChange={e => setName(e.currentTarget.value)} />

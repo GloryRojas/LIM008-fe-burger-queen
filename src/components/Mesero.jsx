@@ -12,7 +12,7 @@ const Mesero = () => {
     const itemPedido = menu.find(e => e.id === item.id);
     const newPedido = itemPedido
       ? [...menu]
-      : [item, ...menu];
+      : [...menu, item];
     setPedido(newPedido);
   };
 
