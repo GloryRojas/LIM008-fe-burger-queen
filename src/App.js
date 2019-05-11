@@ -6,7 +6,7 @@ import Cocinero from './components/Cocinero';
 import Inicio from './components/Inicio';
 
 const App = () => (
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <div>
       <Route exact path="/" component={Inicio} />
       <Route path="/Cocinero/" component={Cocinero} />
