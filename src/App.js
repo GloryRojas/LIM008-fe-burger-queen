@@ -8,10 +8,9 @@ import Inicio from './components/Inicio';
 const App = () => (
   <Router>
     <div>
-      
       <Route exact path="/" component={Inicio} />
-      <Route path="/Cocinero" component={Cocinero} />
-      <Route path="/Mesero" component={Mesero} />
+      <Route path="/Cocinero/" component={Cocinero} />
+      <Route path="/Mesero/" component={Mesero} />
     </div>
   </Router>
 );
