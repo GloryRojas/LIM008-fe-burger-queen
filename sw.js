@@ -14,15 +14,15 @@ if ('function' === typeof importScripts) {
   },
   {
     "url": "index.html",
-    "revision": "a3c446377bfc3e990e46220a258066cf"
+    "revision": "24005c3302e2ad0046cccac2418be7a8"
   },
   {
-    "url": "precache-manifest.0343d8655b66a187a6dc252a747767a5.js",
-    "revision": "0343d8655b66a187a6dc252a747767a5"
+    "url": "precache-manifest.023faac97099619b28fbe0ed3c9a590f.js",
+    "revision": "023faac97099619b28fbe0ed3c9a590f"
   },
   {
     "url": "service-worker.js",
-    "revision": "bac0428ca3b230a369fbe09530173a7b"
+    "revision": "3f8c940fb7f988fb083b26357726b5ab"
   },
   {
     "url": "static/css/main.b4c6fabe.chunk.css",
