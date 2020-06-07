@@ -1,0 +1,10 @@
+.product{
+  border-radius: 5px;
+  margin: 1%;
+  font-size: 13px;
+  width: 30%;
+  padding: 10px 0px;
+  color: black;
+  font-family: inherit;
+  background-color: #FFBE00;
+}

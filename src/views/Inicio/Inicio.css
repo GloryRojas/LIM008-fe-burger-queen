@@ -8,14 +8,6 @@ header{
     padding: 40px;
     color: white;
 }
-.boton-router{
-    display: block;
-    width: 200px;
-    height: 60px;
-    background-color: #FFBE00;
-    margin: 50px 0 0 50px;
-    border-radius: 15px;
-}
 a{
     color: #282c34;
     font-weight: 800;

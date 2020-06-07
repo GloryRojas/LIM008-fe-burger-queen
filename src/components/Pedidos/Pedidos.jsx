@@ -4,8 +4,8 @@ import {
   deleteProduct,
   addCount,
   totalPrice,
-} from './utils';
-import { sendOrder } from './Firebase';
+} from '../../utils/utils';
+import { sendOrder } from '../../utils/Firebase';
 import './Pedidos.css';
 
 const Pedidos = ({ menu, setMenu }) => {

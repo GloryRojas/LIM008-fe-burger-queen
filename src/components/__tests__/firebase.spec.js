@@ -37,7 +37,7 @@ const output = [{
 
 global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
-import { useFirebase, sendOrder } from "../Firebase";
+import { useFirebase, sendOrder } from "../../utils/Firebase";
 
 describe('useFirebase', () => {
   it('debería ser una función', () => {

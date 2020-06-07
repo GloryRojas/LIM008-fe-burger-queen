@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Mesero from './components/Mesero';
-import Cocinero from './components/Cocinero';
-import Inicio from './components/Inicio';
+import Mesero from './views/Mesero/Mesero';
+import Cocinero from './views/Cocinero/Cocinero';
+import Inicio from './views/Inicio/Inicio';
 
 const App = () => (
   <Router basename={process.env.PUBLIC_URL}>

@@ -1,23 +1,23 @@
-header{
+.header{
   background-color: #282c34;
   min-height: 10vh;
-  display: block;
+  display: flex;
   text-align: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.name-header{
-  width: 95%;
+.main-title{
   font-size: 40px;
   color: white;
-  float: left;
 }
 
-.link-router{
-  width: 5%;
-  font-size: 1.4em;
+.icon-back{
+  width: auto;
+  font-size: 10px;
   background-color: azure;
   border-radius: 5px;
   padding: 5px;
-  align-content: center;
 }
 

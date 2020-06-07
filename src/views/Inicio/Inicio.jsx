@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Inicio.css';
+import {Button} from "../../components/commons/Button/Button";
+import Header from "../../components/Header/Header";
 
 const Inicio = () => {
   return (
     <div>
-      <header>
-        <h1>&#60; COFFEE &amp; BURGUER &#62;</h1>
-      </header>
+      <Header />
       <div className="inicio">
-        <button type="button" className="boton-router">
+        <Button type="button" className="btn-secondary">
           <Link to="/Mesero">Mesero</Link>
-        </button>
-        <button type="button" className="boton-router">
+        </Button>
+        <Button type="button" className="btn-secondary">
           <Link to="/Cocinero">Cocinero</Link>
-        </button>
+        </Button>
       </div>
     </div>
   );
