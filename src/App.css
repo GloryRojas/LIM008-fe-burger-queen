@@ -10,7 +10,7 @@ h3{
     color: #CC0001;
 }
 
-button:focus{
+button:focus, input:focus{
   outline: none;
 }
 

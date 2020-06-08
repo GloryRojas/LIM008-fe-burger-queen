@@ -1,9 +1,21 @@
 .input-client{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.input-client input{
   border-radius: 8px;
-  padding: 8px;
+  padding: 12px;
   appearance: none;
   border: 1px solid #FFBE00;
-  width: 46%;
+  width: 100%;
+}
+
+.error-input{
+  color: red;
+  font-size: 16px;
 }
 
 .input-client:focus{
@@ -35,8 +47,9 @@ i{
 }
 .total-price{
     margin: 30px;
-    font-weight: 1000;
+    font-weight: 600;
     border-style: groove;
+    border-radius: 6px;
 }
 
 .prod{
@@ -49,4 +62,21 @@ i{
   justify-content: space-between;
   align-items: center;
   margin: 24px 0;
+}
+
+.empty-box{
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-box p{
+  font-size: 24px;
+  margin: 16px;
+}
+
+.empty-box img{
+  width: 320px;
 }

@@ -12,30 +12,62 @@ import {ProductSelected} from "../commons/ProductSelected/ProductSelected";
 
 const Pedidos = ({ menu, setMenu }) => {
   const [name, setName] = useState('');
+  const [ errorName, setErrorName ] = useState(false);
   const totalPrecio = totalPrice(menu);
   const [ newMenu, setNewMenu ] = useState(menu);
+  const [ success, setSuccess ] = useState(false);
+
+  const validateName = () => {
+    if(name.length > 1){
+      setErrorName(false);
+      return true;
+    }else{
+      setErrorName(true);
+    }
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if(menu.length > 0 ){
-      sendOrder(menu, totalPrecio, name, setMenu, setName);
+    validateName();
+    if(newMenu.length > 0 && name.length > 1 ){
+      sendOrder(newMenu, totalPrecio, name);
+      setNewMenu([]);
+      setName('');
+      setSuccess(true);
+      setMenu([])
     }
   };
 
   useEffect(()=>{
     setNewMenu(menu.filter(ele => ele.cantidad > 0));
   }, [menu]);
-console.log(menu)
+
+  const onHandleInput = (e) => {
+    setName(e.currentTarget.value);
+    validateName();
+  };
+
   return (
     <form onSubmit={(e) => onSubmit(e)}>
       <div className="section-client-name">
         <h5>Ingrese nombre del cliente:</h5>
-        <input className="input-client" type="text" onChange={e => setName(e.currentTarget.value)} />
+        <section className="input-client">
+          <input type="text" onChange={e => onHandleInput(e)} value={name} />
+          { errorName && <span className="error-input">Ingrese nombre del cliente</span>}
+        </section>
       </div>
-      { newMenu
-        .length === 0 &&
+      { newMenu.length === 0 && success &&
+        <div className="empty-box">
+          <p>Gracias por su pedido.</p>
+          <p>Puede realizar otro pedido seleccionando un producto del listado.</p>
+        </div>
+      }
+      { newMenu.length === 0 && !success &&
           <div className="empty-box">
-            Elija un producto
+            <img
+              src="https://user-images.githubusercontent.com/45070947/83985423-d6600d00-a8fe-11ea-86af-c2f018c62a3f.jpg"
+              alt="Plato vacio"/>
+            <p>Elija un producto</p>
           </div>
       }
       { newMenu.length > 0 &&

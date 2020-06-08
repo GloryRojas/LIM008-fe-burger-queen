@@ -19,9 +19,7 @@ export const useFirebase = (stat) => {
 };
 
 
-export const sendOrder = (pedido, total, name, setMenu, setName) => {
-  setMenu([]);
-  setName('');
+export const sendOrder = (pedido, total, name) => {
   return firebase.firestore().collection('pedidos').add({
     Cliente: name,
     Fecha: Date(),
