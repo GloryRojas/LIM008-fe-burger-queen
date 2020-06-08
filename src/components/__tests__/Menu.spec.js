@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, cleanup } from 'react-testing-library';
-import Menu from '../Menu';
+import Menu from '../Menu/Menu';
 
 describe('Menu', () => {
   beforeEach(cleanup);

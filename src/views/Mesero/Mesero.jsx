@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './Mesero.css';
-import Menu from './Menu';
-import Pedidos from './Pedidos';
-import Header from './Header';
+import Menu from '../../components/Menu/Menu';
+import Pedidos from '../../components/Pedidos/Pedidos';
+import Header from '../../components/Header/Header';
+import {Button} from "../../components/commons/Button/Button";
 
 const Mesero = () => {
   const [stat, setMenu] = useState('Desayuno');
@@ -10,20 +11,23 @@ const Mesero = () => {
 
   const sendProduct = (item, menu) => {
     const itemPedido = menu.find(e => e.id === item.id);
-    const newPedido = itemPedido
-      ? [...menu]
-      : [...menu, item];
-    setPedido(newPedido);
+    if(!itemPedido){
+      setPedido(pedido.concat(item));
+    }else{
+      let cantidad = menu[menu.indexOf(itemPedido)].cantidad;
+      itemPedido.cantidad = cantidad + 1;
+      setPedido([...pedido]);
+    }
   };
 
   return (
     <div>
-      <Header />
+      <Header back />
       <div className="bodrow">
         <div className="col back-uno">
           <h3>MENÚ</h3>
-          <button type="button" onClick={() => setMenu('Desayuno')}>Desayuno</button>
-          <button type="button" onClick={() => setMenu('allDay')}>Resto del día</button>
+          <Button className="btn-primary" type="button" onClick={() => setMenu('Desayuno')}>Desayuno</Button>
+          <Button className="btn-primary" type="button" onClick={() => setMenu('allDay')}>Resto del día</Button>
           <div>
             <Menu sendProduct={sendProduct} pedido={pedido} stat={stat} />
           </div>

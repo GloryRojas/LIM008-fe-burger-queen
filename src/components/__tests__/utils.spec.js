@@ -1,4 +1,4 @@
-import { deleteProduct, addCount, totalPrice, filterMenu } from '../utils';
+import { deleteProduct, addCount, totalPrice, filterMenu } from '../../utils/utils';
 
 const input = [{id:1, cantidad:1, precio:3, categoria:'desayuno'},{id:2, cantidad:1, precio:2, categoria:'almu'}];
 const output	= [{id:2, cantidad:1, precio:2, categoria:'almu'}];
