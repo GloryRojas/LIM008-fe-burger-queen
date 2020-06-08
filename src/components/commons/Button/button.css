@@ -14,13 +14,16 @@
 }
 
 .btn-secondary{
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 200px;
   height: 60px;
   background-color: #FFBE00;
   margin: 24px;
   border-radius: 15px;
   outline: none;
+  color: #282c34;
 }
 
 .btn-secondary:hover{

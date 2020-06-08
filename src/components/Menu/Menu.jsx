@@ -15,6 +15,7 @@ const Menu = ({
     <div className="blocks">
       {items.map(item =>
         <Product
+          key={item.id}
           item={item}
           onClick={() => sendProduct(item, pedido)}
         />

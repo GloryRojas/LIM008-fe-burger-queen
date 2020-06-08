@@ -1,6 +1,16 @@
-input{
-    border-radius: 5px;
-    margin-bottom: 20px;
+.input-client{
+  border-radius: 8px;
+  padding: 8px;
+  appearance: none;
+  border: 1px solid #FFBE00;
+  width: 46%;
+}
+
+.input-client:focus{
+  outline: none;
+}
+.input-client:hover{
+  box-shadow: 0px 4px 10px rgba(20, 43, 127, 0.25);
 }
 
 .head{
@@ -31,4 +41,12 @@ i{
 
 .prod{
     margin-top: 10px;
+}
+
+.section-client-name{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 0;
 }

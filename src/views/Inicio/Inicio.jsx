@@ -9,12 +9,12 @@ const Inicio = () => {
     <div>
       <Header />
       <div className="inicio">
-        <Button type="button" className="btn-secondary">
-          <Link to="/Mesero">Mesero</Link>
-        </Button>
-        <Button type="button" className="btn-secondary">
-          <Link to="/Cocinero">Cocinero</Link>
-        </Button>
+        <Link to="/Mesero" className="btn-secondary">
+            Mesero
+        </Link>
+        <Link to="/Cocinero"  className="btn-secondary">
+            Cocinero
+        </Link>
       </div>
     </div>
   );
