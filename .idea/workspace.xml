@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff5dfc85-edb1-4dd2-a792-ff0c82cd86d6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pedidos/Pedidos.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pedidos/Pedidos.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Pedidos/Pedidos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pedidos/Pedidos.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1591564208347</updated>
-      <workItem from="1591564214461" duration="14783000" />
+      <workItem from="1591564214461" duration="17003000" />
     </task>
     <task id="LOCAL-00001" summary="Add: box shadow to products">
       <created>1591571624160</created>
@@ -102,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591579037269</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add: screen of thankyou">
+      <created>1591582027687</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1591582027687</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,17 +122,18 @@
     <MESSAGE value="Update: validation to send order" />
     <MESSAGE value="Fix: add quantity with clicks on product" />
     <MESSAGE value="Fix: delete products with quantity less than one." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix: delete products with quantity less than one." />
+    <MESSAGE value="Add: screen of thankyou" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: screen of thankyou" />
   </component>
   <component name="WindowStateProjectService">
     <state x="579" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591573161325">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="579" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1591573161325" />
-    <state x="378" y="40" key="CommitChangelistDialog2" timestamp="1591579037062">
+    <state x="378" y="40" key="CommitChangelistDialog2" timestamp="1591582027514">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="378" y="40" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1591579037062" />
+    <state x="378" y="40" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1591582027514" />
     <state x="496" y="266" width="687" height="518" key="find.popup" timestamp="1591581931252">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
