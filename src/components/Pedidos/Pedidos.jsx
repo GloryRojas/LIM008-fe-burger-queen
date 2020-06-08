@@ -43,7 +43,7 @@ const Pedidos = ({ menu, setMenu }) => {
               <span className="col-2">TOTAL($)</span>
               <span className="col-2">ELIM</span>
             </div>
-            {menu.map(p =>
+            { menu.map(p =>
               <ProductSelected
                 key={p.id}
                 p={p}
