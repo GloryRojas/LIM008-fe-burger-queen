@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
   deleteProduct,
@@ -13,28 +13,32 @@ import {ProductSelected} from "../commons/ProductSelected/ProductSelected";
 const Pedidos = ({ menu, setMenu }) => {
   const [name, setName] = useState('');
   const totalPrecio = totalPrice(menu);
+  const [ newMenu, setNewMenu ] = useState(menu);
 
   const onSubmit = (e) => {
     e.preventDefault();
     if(menu.length > 0 ){
       sendOrder(menu, totalPrecio, name, setMenu, setName);
-    }else {
-      console.log('error')
     }
   };
 
+  useEffect(()=>{
+    setNewMenu(menu.filter(ele => ele.cantidad > 0));
+  }, [menu]);
+console.log(menu)
   return (
     <form onSubmit={(e) => onSubmit(e)}>
       <div className="section-client-name">
         <h5>Ingrese nombre del cliente:</h5>
         <input className="input-client" type="text" onChange={e => setName(e.currentTarget.value)} />
       </div>
-      { menu.length === 0 &&
+      { newMenu
+        .length === 0 &&
           <div className="empty-box">
             Elija un producto
           </div>
       }
-      { menu.length > 0 &&
+      { newMenu.length > 0 &&
         <>
           <div className="container">
             <div className="row head">
@@ -43,7 +47,7 @@ const Pedidos = ({ menu, setMenu }) => {
               <span className="col-2">TOTAL($)</span>
               <span className="col-2">ELIM</span>
             </div>
-            { menu.map(p =>
+            { newMenu.map(p =>
               <ProductSelected
                 key={p.id}
                 p={p}
