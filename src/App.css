@@ -14,11 +14,6 @@ button:focus, input:focus{
   outline: none;
 }
 
-.bodrow{
-    display: flex;
-    flex-wrap: wrap;
-}
-
 a:hover{
   outline: 0;
   text-decoration: none;
