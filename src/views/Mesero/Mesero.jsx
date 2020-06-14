@@ -4,6 +4,7 @@ import Menu from '../../components/Menu/Menu';
 import Pedidos from '../../components/Pedidos/Pedidos';
 import Header from '../../components/Header/Header';
 import {Button} from "../../components/commons/Button/Button";
+import {CenterContainer, MainContainer, SectionContainer} from "../../components/commons/containers/MainContaimer";
 
 const Mesero = () => {
   const [stat, setMenu] = useState('Desayuno');
@@ -21,23 +22,27 @@ const Mesero = () => {
   };
 
   return (
-    <div>
+    <>
       <Header back />
-      <div className="bodrow">
-        <div className="col back-uno">
-          <h3>MENÚ</h3>
-          <Button className="btn-primary" type="button" onClick={() => setMenu('Desayuno')}>Desayuno</Button>
-          <Button className="btn-primary" type="button" onClick={() => setMenu('allDay')}>Resto del día</Button>
-          <div>
+      <MainContainer >
+          <SectionContainer >
+            <CenterContainer>
+              <h3>MENÚ</h3>
+            </CenterContainer>
+            <CenterContainer>
+              <Button className="btn-primary" type="button" onClick={() => setMenu('Desayuno')}>Desayuno</Button>
+              <Button className="btn-primary" type="button" onClick={() => setMenu('allDay')}>Almuerzo</Button>
+            </CenterContainer>
             <Menu sendProduct={sendProduct} pedido={pedido} stat={stat} />
-          </div>
-        </div>
-        <div className="col back-uno">
-          <h3>PEDIDOS</h3>
-          <Pedidos menu={pedido} setMenu={setPedido} />
-        </div>
-      </div>
-    </div>
+          </SectionContainer>
+          <SectionContainer >
+            <CenterContainer>
+              <h3>PEDIDOS</h3>
+            </CenterContainer>
+            <Pedidos menu={pedido} setMenu={setPedido} />
+          </SectionContainer>
+      </MainContainer>
+    </>
   );
 };
 

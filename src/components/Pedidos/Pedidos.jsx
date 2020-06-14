@@ -9,6 +9,7 @@ import { sendOrder } from '../../utils/Firebase';
 import './Pedidos.css';
 import {Button} from "../commons/Button/Button";
 import {ProductSelected} from "../commons/ProductSelected/ProductSelected";
+import {CenterContainer} from "../commons/containers/MainContaimer";
 
 const Pedidos = ({ menu, setMenu }) => {
   const [name, setName] = useState('');
@@ -48,7 +49,7 @@ const Pedidos = ({ menu, setMenu }) => {
   };
 
   return (
-    <form onSubmit={(e) => onSubmit(e)}>
+    <form onSubmit={(e) => onSubmit(e)} className="container-products">
       <div className="section-client-name">
         <h5>Ingrese nombre del cliente:</h5>
         <section className="input-client">
@@ -73,11 +74,12 @@ const Pedidos = ({ menu, setMenu }) => {
       { newMenu.length > 0 &&
         <>
           <div className="container">
-            <div className="row head">
-              <span className="col-4">PRODUCTO</span>
-              <span className="col-4">CANTIDAD</span>
-              <span className="col-2">TOTAL($)</span>
-              <span className="col-2">ELIM</span>
+            <div className="section-client-name">
+              <h4>Productos Seleccionados:</h4>
+              <div className="total-price">
+                <span>TOTAL $ {totalPrecio}.00
+                </span>
+              </div>
             </div>
             { newMenu.map(p =>
               <ProductSelected
@@ -88,13 +90,11 @@ const Pedidos = ({ menu, setMenu }) => {
                 deleteProduct={() => setMenu(deleteProduct(p.id, menu))}
               />
             )}
-            <div className="col-6 total-price">
-            <span>TOTAL  &#36; {totalPrecio}.00
-            </span>
-            </div>
           </div>
-          <Button className="btn-primary" type="button" onClick={() => setMenu([])}>Cancelar pedido</Button>
-          <Button className="btn-primary" type="submit" >Enviar pedido</Button>
+          <CenterContainer>
+            <Button className="btn-primary" type="button" onClick={() => setMenu([])}>Cancelar</Button>
+            <Button className="btn-primary" type="submit" >Enviar</Button>
+          </CenterContainer>
         </>
       }
     </form>
