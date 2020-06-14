@@ -10,11 +10,7 @@ export const Product = (props) => {
       className="product"
       key={item.id}
       onClick={props.onClick}>
-        <img
-          src={`${item.img}`}
-          alt="Product"
-          className="img-menu"/>
-        <p data-testid={`${item.id}-nombre`}>
+        <p data-testid={`${item.id}-nombre`} className="product-description">
           {item.nombre}
         </p>
         <p>

@@ -12,7 +12,7 @@ const Menu = ({
 }) => {
   const items = filterMenu(useFirebase('menu'), stat);
   return (
-    <div className="blocks">
+    <div className="container-products">
       {items.map(item =>
         <Product
           key={item.id}
