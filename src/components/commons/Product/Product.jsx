@@ -14,7 +14,7 @@ export const Product = (props) => {
           {item.nombre}
         </p>
         <p>
-          &#36; {item.precio}&#46;00
+          {item.moneda} {item.precio}&#46;00
         </p>
     </button>
   )

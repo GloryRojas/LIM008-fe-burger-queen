@@ -1,13 +1,13 @@
 {
-  "main.css": "/LIM008-fe-burger-queen/static/css/main.fd4e7f0a.chunk.css",
-  "main.js": "/LIM008-fe-burger-queen/static/js/main.d3161ec1.chunk.js",
-  "main.js.map": "/LIM008-fe-burger-queen/static/js/main.d3161ec1.chunk.js.map",
+  "main.css": "/LIM008-fe-burger-queen/static/css/main.968b9ef1.chunk.css",
+  "main.js": "/LIM008-fe-burger-queen/static/js/main.7e98ddbc.chunk.js",
+  "main.js.map": "/LIM008-fe-burger-queen/static/js/main.7e98ddbc.chunk.js.map",
   "runtime~main.js": "/LIM008-fe-burger-queen/static/js/runtime~main.10776b7b.js",
   "runtime~main.js.map": "/LIM008-fe-burger-queen/static/js/runtime~main.10776b7b.js.map",
-  "static/js/2.407da309.chunk.js": "/LIM008-fe-burger-queen/static/js/2.407da309.chunk.js",
-  "static/js/2.407da309.chunk.js.map": "/LIM008-fe-burger-queen/static/js/2.407da309.chunk.js.map",
+  "static/js/2.7cace621.chunk.js": "/LIM008-fe-burger-queen/static/js/2.7cace621.chunk.js",
+  "static/js/2.7cace621.chunk.js.map": "/LIM008-fe-burger-queen/static/js/2.7cace621.chunk.js.map",
   "index.html": "/LIM008-fe-burger-queen/index.html",
-  "precache-manifest.7a96d4e19ae84cdfc5c4f34e5145d0f9.js": "/LIM008-fe-burger-queen/precache-manifest.7a96d4e19ae84cdfc5c4f34e5145d0f9.js",
+  "precache-manifest.92b5fb64e264f90783a56693e3c330d1.js": "/LIM008-fe-burger-queen/precache-manifest.92b5fb64e264f90783a56693e3c330d1.js",
   "service-worker.js": "/LIM008-fe-burger-queen/service-worker.js",
-  "static/css/main.fd4e7f0a.chunk.css.map": "/LIM008-fe-burger-queen/static/css/main.fd4e7f0a.chunk.css.map"
+  "static/css/main.968b9ef1.chunk.css.map": "/LIM008-fe-burger-queen/static/css/main.968b9ef1.chunk.css.map"
 }

@@ -6,8 +6,11 @@
       <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Pedidos/Pedidos.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Pedidos/Pedidos.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/commons/Product/Product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/Product/Product.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/commons/Product/product.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/Product/product.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/commons/ProductSelected/ProductSelected.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/ProductSelected/ProductSelected.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/commons/ProductSelected/ProductSelected.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/ProductSelected/ProductSelected.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1591564208347</updated>
       <workItem from="1591564214461" duration="17003000" />
+      <workItem from="1593819321099" duration="963000" />
     </task>
     <task id="LOCAL-00001" summary="Add: box shadow to products">
       <created>1591571624160</created>
@@ -134,9 +138,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="378" y="40" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1591582027514" />
-    <state x="496" y="266" width="687" height="518" key="find.popup" timestamp="1591581931252">
+    <state x="496" y="266" width="687" height="518" key="find.popup" timestamp="1593820842831">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="496" y="266" width="687" height="518" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1591581931252" />
+    <state x="496" y="266" width="687" height="518" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1593820842831" />
   </component>
 </project>

@@ -18,7 +18,7 @@
 }
 
 .product-description:first-child {
-  width: 74%;
+  width: 72%;
 }
 @media only screen and (min-width: 1024px ) {
   .product{

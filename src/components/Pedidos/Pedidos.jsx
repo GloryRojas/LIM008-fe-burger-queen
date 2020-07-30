@@ -77,7 +77,7 @@ const Pedidos = ({ menu, setMenu }) => {
             <div className="section-client-name">
               <h4>Productos Seleccionados:</h4>
               <div className="total-price">
-                <span>TOTAL $ {totalPrecio}.00
+                <span>TOTAL S/. {totalPrecio}.00
                 </span>
               </div>
             </div>

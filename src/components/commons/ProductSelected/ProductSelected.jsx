@@ -9,7 +9,7 @@ export const ProductSelected = (props) => {
       <div className="product-selected-quantity">
         <p className="product-selected-name">{p.nombre}</p>
         <p className="product-selected-price">
-          Precio Total $ {p.cantidad * p.precio}
+          Precio Total {p.moneda} {p.cantidad * p.precio}
         </p>
       </div>
       <div className="product-selected-quantity">
@@ -40,7 +40,7 @@ export const ProductSelected = (props) => {
           </button>
         </div>
         <p className="product-selected-price">
-          Precio Uni. $ {p.precio}
+          Precio Uni. {p.moneda} {p.precio}
         </p>
       </div>
     </div>
