@@ -27,11 +27,14 @@ const Mesero = () => {
       <MainContainer >
           <SectionContainer >
             <CenterContainer>
-              <h3>MENÚ</h3>
-            </CenterContainer>
-            <CenterContainer>
-              <Button className="btn-primary" type="button" onClick={() => setMenu('Desayuno')}>Desayuno</Button>
-              <Button className="btn-primary" type="button" onClick={() => setMenu('allDay')}>Almuerzo</Button>
+              <Button
+                className="btn-primary"
+                type="button"
+                onClick={() => setMenu('Desayuno')}>Frutas</Button>
+              <Button
+                className="btn-primary"
+                type="button"
+                onClick={() => setMenu('allDay')}>Verduras</Button>
             </CenterContainer>
             <Menu sendProduct={sendProduct} pedido={pedido} stat={stat} />
           </SectionContainer>

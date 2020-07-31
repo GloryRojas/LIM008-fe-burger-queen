@@ -65,9 +65,6 @@ const Pedidos = ({ menu, setMenu }) => {
       }
       { newMenu.length === 0 && !success &&
           <div className="empty-box">
-            <img
-              src="https://user-images.githubusercontent.com/45070947/83985423-d6600d00-a8fe-11ea-86af-c2f018c62a3f.jpg"
-              alt="Plato vacio"/>
             <p>Elija un producto</p>
           </div>
       }

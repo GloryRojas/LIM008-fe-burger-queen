@@ -1,6 +1,9 @@
+@import "./src/styles/commons/variables";
+
 .btn-primary{
   margin: 16px;
-  background-color: #282c34;
+  background-color: $base-color;
+  font-family: $primary-font;
   color: white;
   border-radius: 5px;
   padding: 12px;

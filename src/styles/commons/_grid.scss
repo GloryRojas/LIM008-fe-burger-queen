@@ -1,0 +1,73 @@
+@import './variables';
+
+//Width column
+@function col($columns, $total) {
+    @return (100% / $total) * $columns;
+  }
+
+//Mixins
+
+@mixin media($types...) {
+    @each $type in $types {
+      @if $type == mobile {
+        @media only screen and (min-width: $mobile-screen + 1) and (max-width: $small-screen) {
+          @content;
+        }
+      }
+
+      @if $type == tablet {
+        @media only screen and (min-width: $small-screen + 1) {
+          @content;
+        }
+      }
+
+      @if $type == desktop {
+        @media only screen and (min-width: $medium-screen + 1) {
+          @content;
+        }
+      }
+    }
+  }
+
+  .container {
+      margin: 0 auto;
+      width: 95%;
+      max-width: 328px;
+      padding: 0;
+
+      @include media(tablet){
+        max-width: 656px;
+      }
+      @include media(desktop){
+        max-width:1148px;
+        width:100%;
+      }
+  }
+
+    h1, h2, h3, h4, h5, p {
+        margin: 0;
+    }
+
+  #overlayGrid {
+    width: 95%;
+    margin: auto;
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 6;
+    max-width: 328px;
+    background-image: repeating-linear-gradient(90deg,
+        rgba(0, 0, 0, 0.05),
+        rgba(0, 0, 0, 0.05) (100/12*1%),
+        rgba(255, 255, 0, 0.05) (100/12*1%),
+        rgba(255, 255, 0, 0.05) (200/12*1%));
+    @include media(tablet) {
+        max-width: 656px;
+    }
+    @include media(desktop) {
+        max-width: 1148px;
+    }
+}

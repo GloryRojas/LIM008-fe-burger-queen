@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './styles/index.scss';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Mesero from './views/Mesero/Mesero';
 import Cocinero from './views/Cocinero/Cocinero';

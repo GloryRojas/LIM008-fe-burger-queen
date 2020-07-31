@@ -1,5 +1,5 @@
 import React from 'react';
-import './Menu.css';
+import './Menu.scss';
 import PropTypes from 'prop-types';
 import { filterMenu } from '../../utils/utils';
 import { useFirebase } from '../../utils/Firebase';

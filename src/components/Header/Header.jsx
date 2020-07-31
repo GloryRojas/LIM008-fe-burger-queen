@@ -5,7 +5,7 @@ import './Header.css';
 const Header = (props) => (
   <header className="header">
       <span className="main-title">
-        &#60; COFFEE &amp; BURGUER &#62;
+        VEGIFRUTS
       </span>
       { props.back &&
         <span className="icon-back">
